@@ -35,7 +35,7 @@ getline(cin, user_input);
 string numeric_characters = "-0123456789";
 vector<int> numeric_inputs = split_to_ints(user_input, numeric_characters);
 // copy all (but last 2) digits from vector into a c-array (to be passed into
-LinkedList constructor)
+LinkedList constructor}
 int array_size = numeric_inputs.size()-2;
 int * input_array = new int[array_size];
 for(unsigned int i = 0; i < (numeric_inputs.size()-2); i++) {

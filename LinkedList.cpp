@@ -14,7 +14,7 @@ LinkedList::LinkedList(int *array, int len)
     Node *ptr = new Node(array[0], nullptr);
     head = ptr;
 
-    for (int i = 1; i < size; i++)
+    for (int i = 1; i < len; i++)
     {
         Node *temp = new Node(array[i], nullptr);
         ptr->setLink(temp);
@@ -53,7 +53,7 @@ void LinkedList::insertEnd(int newNum)
     }
 }
 
-void Linkedlist::insertPosition(int pos, newNum)
+void LinkedList::insertPosition(int pos, int newNum)
 {
     if (this->isEmpty())
     {
@@ -102,7 +102,7 @@ int LinkedList::get(int pos)
 
     while(ptr != nullptr)
     {
-        if (ptr->getData() == item)
+        if (ptr->getData() == pos)
         {
             found = count;
             break;
@@ -149,19 +149,20 @@ void LinkedList::deleteEnd()
     return;
 }
 
-void LinkedList::deletePosition(int pos)
+bool LinkedList::deletePosition(int pos)
 {
     if(this->isEmpty())
     {
-        return;
+        return false;
     }
 
     if(pos < 1)
     {
-        return -1;
+        return false;
     }
 
-    Node *del = head;
+    Node *del = nullptr;
+    Node *ptr = head;
     int count = 0;
 
     while (ptr != nullptr && count <= pos)
@@ -175,13 +176,15 @@ void LinkedList::deletePosition(int pos)
     }
     if (del == nullptr || del->getLink() == nullptr)
     {
-        return -1;
+        return false;
     }
-    Node *temp = del->setLink();
+    Node *temp = del->getLink();
     del->setLink(temp->getLink());
     delete(temp);
-    return;
+    return true;
 }
+
+/*
 
 int LinkedList::get(int pos)
 {
@@ -208,6 +211,8 @@ int LinkedList::get(int pos)
     }
     std::get->getData();
 }
+
+*/
 
 void LinkedList::printList()
 {

@@ -33,12 +33,14 @@ class LinkedList
 
     // returns the pos Node's member variable 
     // if out of bounds, return std::numeric_limits < int >::max()
-    int get(int pos)
+    int get(int pos);
 
     // searches the list for first occurance of target 
     // returns index of target or -1 if it does not exist 
-    int search(int target)
+    int search(int target);
 
     // prints the list enscapsulated by '[' and ']'
     void printList();
-}
+};
+
+#endif
