@@ -226,6 +226,7 @@ void LinkedList::printList()
     if(this->isEmpty())
     {
         return;
+        break;
     }
 
     Node *ptr = head;
