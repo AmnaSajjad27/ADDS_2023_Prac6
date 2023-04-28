@@ -92,8 +92,8 @@ void LinkedList::insertPosition(int pos, int newNum)
     add->setLink(temp);
     return;
 }
-
-int LinkedList::get(int pos)
+// search
+int LinkedList::search(int target)
 {
     int found = 0;
 
@@ -102,7 +102,7 @@ int LinkedList::get(int pos)
 
     while(ptr != nullptr)
     {
-        if (ptr->getData() == pos)
+        if (ptr->getData() == target)
         {
             found = count;
             break;
@@ -110,8 +110,6 @@ int LinkedList::get(int pos)
         ptr = ptr->getLink();
         count++;
     }
-
-    std::cout << found << " " << std::endl;
     return found;   
 }
 
@@ -184,8 +182,6 @@ bool LinkedList::deletePosition(int pos)
     return true;
 }
 
-/*
-
 int LinkedList::get(int pos)
 {
     int outofrange = std::numeric_limits < int >::max();
@@ -209,10 +205,8 @@ int LinkedList::get(int pos)
     {
         return outofrange;
     }
-    std::get->getData();
+    return get->getData();
 }
-
-*/
 
 void LinkedList::printList()
 {

@@ -27,7 +27,7 @@ class LinkedList
     // removes the node at pos and deletes it
     bool deletePosition(int pos); 
 
-    // helper functions for delete position
+    // helper functions
     void deleteFront();
     void deleteEnd();
 
