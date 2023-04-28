@@ -205,7 +205,7 @@ int LinkedList::get(int pos)
 
     Node *get = nullptr;
     Node *ptr = head;
-    int count = 1;
+    int count = 0;
 
     while(ptr != nullptr && count <= pos)
     {
