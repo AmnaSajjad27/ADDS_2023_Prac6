@@ -112,6 +112,11 @@ int LinkedList::search(int target)
         ptr = ptr->getLink();
         count++;
     }
+    // changed this 
+    else 
+    {
+        return -1;
+    }
     return found;   
 }
 
