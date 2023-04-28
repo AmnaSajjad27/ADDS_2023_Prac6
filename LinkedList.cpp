@@ -180,15 +180,16 @@ bool LinkedList::deletePosition(int pos)
         }
         ptr = ptr->getLink();
     }
-    /*
+    
     if (del == nullptr || del->getLink() == nullptr)
     {
         return false;
     }
-    */
+    
     Node *temp = del->getLink();
     del->setLink(temp->getLink());
     delete(temp);
+
     return true;
 }
 
