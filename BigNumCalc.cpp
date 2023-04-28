@@ -3,6 +3,8 @@
 
 #include "BigNumCalc.h"
 
+BigNumCalc::BigNumCalc(){};
+
 // Creates a list representing the provided string
 // For example, a string "12345" would become a list with elements 1,2,3,4, and 5
 
