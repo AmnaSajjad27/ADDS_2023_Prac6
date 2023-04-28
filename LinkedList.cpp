@@ -100,6 +100,7 @@ int LinkedList::search(int target)
     int found = 0;
 
     int count = 1;
+    
     Node *ptr = head;
 
     while(ptr != nullptr)
@@ -111,12 +112,11 @@ int LinkedList::search(int target)
         }
         else 
         {
-            return -1;
+            found = -1;
         }
         ptr = ptr->getLink();
         count++;
     }
-    // changed this 
     return found;   
 }
 
