@@ -173,16 +173,19 @@ bool LinkedList::deletePosition(int pos)
     while (ptr != nullptr && count <= pos)
     {
         count++;
+
         if (count == pos - 1)
         {
             del = ptr;
         }
         ptr = ptr->getLink();
     }
+    /*
     if (del == nullptr || del->getLink() == nullptr)
     {
         return false;
     }
+    */
     Node *temp = del->getLink();
     del->setLink(temp->getLink());
     delete(temp);
