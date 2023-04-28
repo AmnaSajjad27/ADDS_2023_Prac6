@@ -116,3 +116,4 @@ std::list<int> BigNumCalc::mul(std::list<int> num1, std::list<int> num2)
     return product;
 }
 
+BigNumCalc::~BigNumCalc(){};
