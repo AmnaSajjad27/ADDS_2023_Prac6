@@ -1,6 +1,6 @@
-#include <iostream>
 #include <string>
 #include <list>
+
 #include "BigNumCalc.h"
 
 // Creates a list representing the provided string
@@ -47,14 +47,16 @@ std::list<int> BigNumCalc::add(std::list<int> num1, std::list<int> num2)
     return sum;
 }
 
+// subtraction digit by digit 
 std::list<int> BigNumCalc::sub(std::list<int> num1, std::list<int> num2) 
 {
     std::list<int> difference;
 
     int borrow = 0;
-
+// while loop untill we have iteriated thorugh all the list
     while (!num1.empty() || !num2.empty()) 
     {
+        // varibale borrow if num 2 is bigger than num 1
         int digitDiff = borrow;
 
         if (!num1.empty()) 
@@ -79,7 +81,7 @@ std::list<int> BigNumCalc::sub(std::list<int> num1, std::list<int> num2)
         difference.push_front(digitDiff);
     }
 
-    // Remove any leading zeros
+    // Removing any leading zeros
     while (difference.size() > 1 && difference.front() == 0) 
     {
         difference.pop_front();
@@ -87,12 +89,15 @@ std::list<int> BigNumCalc::sub(std::list<int> num1, std::list<int> num2)
     return difference;
 }
 
+// can assume num2 is only 1 digit long 
 std::list<int> BigNumCalc::mul(std::list<int> num1, std::list<int> num2) 
 {
     std::list<int> product;
 
     int carry = 0;
 
+    // for loop to iteriate through each digit in reverse order using reverse iteriator 
+    // reverse order because we start with the least signifcant bit and keep multiplying 
     for (auto it = num1.rbegin(); it != num1.rend(); it++) 
     {
         int digitProd = (*it) * num2.front() + carry;
@@ -103,7 +108,7 @@ std::list<int> BigNumCalc::mul(std::list<int> num1, std::list<int> num2)
     {
         product.push_front(carry);
     }
-    // Remove any leading zeros
+    // Removing any leading zeros
     while (product.size() > 1 && product.front() == 0) 
     {
         product.pop_front();
