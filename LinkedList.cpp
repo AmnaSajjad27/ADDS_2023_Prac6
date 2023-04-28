@@ -109,14 +109,14 @@ int LinkedList::search(int target)
             found = count;
             break;
         }
+        else 
+        {
+            return -1;
+        }
         ptr = ptr->getLink();
         count++;
     }
     // changed this 
-    else 
-    {
-        return -1;
-    }
     return found;   
 }
 
