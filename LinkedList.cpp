@@ -55,11 +55,13 @@ void LinkedList::insertEnd(int newNum)
 
 void LinkedList::insertPosition(int pos, int newNum)
 {
+    /*
     if (this->isEmpty())
     {
         head = new Node(newNum, nullptr);
         return;
     }
+    */
 
     if (pos <= 1)
     {
