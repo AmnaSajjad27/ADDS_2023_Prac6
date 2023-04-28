@@ -197,6 +197,7 @@ bool LinkedList::deletePosition(int pos)
 int LinkedList::get(int pos)
 {
     int outofrange = std::numeric_limits < int >::max();
+
     if(pos < 1)
     {
         return outofrange;
@@ -204,7 +205,7 @@ int LinkedList::get(int pos)
 
     Node *get = nullptr;
     Node *ptr = head;
-    int count = 0;
+    int count = 1;
 
     while(ptr != nullptr && count <= pos)
     {
