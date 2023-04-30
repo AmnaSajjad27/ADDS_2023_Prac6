@@ -156,12 +156,7 @@ void LinkedList::deleteEnd()
 
 bool LinkedList::deletePosition(int pos)
 {
-    /*
-    if(this->isEmpty())
-    {
-        return;
-    }
-    */
+
     if(pos < 1)
     {
         return false;
@@ -214,7 +209,7 @@ int LinkedList::get(int pos)
             get = ptr;
         ptr = ptr->getLink();
     }
-    if (get == nullptr)
+    if (get == nullptr || get->getLink() == nullptr)
     {
         return outofrange;
     }
