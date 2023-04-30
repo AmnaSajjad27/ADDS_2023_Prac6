@@ -156,15 +156,15 @@ void LinkedList::deleteEnd()
 
 bool LinkedList::deletePosition(int pos)
 {
-    
+    /*
     if(this->isEmpty())
     {
         return;
     }
-    
+    */
     if(pos < 1)
     {
-        return;
+        return false;
     }
 
     Node *del = nullptr;
