@@ -55,14 +55,13 @@ void LinkedList::insertEnd(int newNum)
 
 void LinkedList::insertPosition(int pos, int newNum)
 {
-    /*
+    
     if (this->isEmpty())
     {
         head = new Node(newNum, nullptr);
         return;
     }
-    */
-
+    
     if (pos <= 1)
     {
         this->insertFront(newNum);
@@ -77,7 +76,7 @@ void LinkedList::insertPosition(int pos, int newNum)
     while (ptr != nullptr && count <= pos)
     {
         count++;
-        if (count == pos -1)
+        if (count == pos - 1)
         {
             add = ptr;
         }
@@ -94,6 +93,7 @@ void LinkedList::insertPosition(int pos, int newNum)
     add->setLink(temp);
     return;
 }
+
 // search
 int LinkedList::search(int target)
 {
@@ -112,7 +112,7 @@ int LinkedList::search(int target)
         }
         else 
         {
-            found = -1;
+            found = - 1;
         }
         ptr = ptr->getLink();
         count++;
@@ -156,15 +156,15 @@ void LinkedList::deleteEnd()
 
 bool LinkedList::deletePosition(int pos)
 {
-    /*
+    
     if(this->isEmpty())
     {
-        return false;
+        return;
     }
-    */
+    
     if(pos < 1)
     {
-        return false;
+        return;
     }
 
     Node *del = nullptr;
