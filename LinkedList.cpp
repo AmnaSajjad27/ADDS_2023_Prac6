@@ -176,7 +176,8 @@ bool LinkedList::deletePosition(int pos)
     {
         count++;
 
-        if (count == pos - 1)
+// pos-1 to poss
+        if (count == pos)
         {
             del = ptr;
         }
