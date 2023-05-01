@@ -7,7 +7,7 @@
 
 LinkedList::LinkedList()
 {
-   // head = nullptr;
+   head = new Node(0,NULL);
 }
 
 LinkedList::LinkedList(int *array, int len)
