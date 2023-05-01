@@ -101,6 +101,7 @@ void LinkedList::insertPosition(int pos, int newNum)
 }
 
 // search
+/*
 int LinkedList::search(int target)
 {
     int found = 0;
@@ -115,6 +116,7 @@ int LinkedList::search(int target)
         {
             found = count;
             break;
+            // maybe here return count
         }
         else 
         {
@@ -124,6 +126,23 @@ int LinkedList::search(int target)
         count++;
     }
     return found;   
+}
+*/
+
+int LinkedList::search(int target){
+    Node* ptr = head->getLink();
+
+    int count = 1;
+
+    while(ptr != NULL)
+    {
+        if(ptr->getData() == target){
+            return count;
+        }
+        count++;
+        ptr = ptr->getLink();
+    }
+    return -1;
 }
 
 void LinkedList::deleteFront()
@@ -232,7 +251,7 @@ int LinkedList::get(int pos)
         return outofrange;
     }
     //return get->getData();
-    return outofrange;
+    return get->getData();
 }
 
 void LinkedList::printList()
