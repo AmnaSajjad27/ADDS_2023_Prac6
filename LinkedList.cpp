@@ -21,7 +21,7 @@ LinkedList::LinkedList(int *array, int len)
         ptr->setLink(temp);
         ptr = temp;
     }
-    ptr->setLink(nullptr);
+  //  ptr->setLink(nullptr);
 }
 
 bool LinkedList::isEmpty()
