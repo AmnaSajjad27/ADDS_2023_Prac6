@@ -245,7 +245,9 @@ void LinkedList::printList()
     }
 
     Node *ptr = head;
-        std::cout << "[";
+
+    std::cout << "[";
+
     while (ptr != nullptr)
     {
         std::cout << ptr->getData() << " ";
@@ -264,4 +266,6 @@ LinkedList::~LinkedList()
         ptr = ptr->getLink();
         delete temp;
     }
+    // 
+    head->~Node();
 }
