@@ -162,14 +162,8 @@ void LinkedList::deleteEnd()
 
 bool LinkedList::deletePosition(int pos)
 {
-    int len = 0;
-    Node *tail = head->getLink();
-    while(tail != NULL)
-    {
-        len++;
-    }
 
-    if(pos < 1 || pos > len)
+    if(pos < 1)
     {
         return false;
     }
