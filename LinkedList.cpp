@@ -167,6 +167,17 @@ bool LinkedList::deletePosition(int pos)
     {
         return false;
     }
+    // edited this to include more conditions 
+    else
+    {
+        Node *temp = head->getLink();
+        if(pos == 1)
+        {
+            temp = head->getLink();
+            head = temp;
+            return true;
+        }
+    }
 
     Node *del = nullptr;
     Node *ptr = head;
@@ -176,8 +187,7 @@ bool LinkedList::deletePosition(int pos)
     {
         count++;
 
-// pos-1 to poss
-        if (count == pos)
+        if (count == pos - 1)
         {
             del = ptr;
         }
