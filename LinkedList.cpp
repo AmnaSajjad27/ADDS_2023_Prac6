@@ -208,17 +208,9 @@ bool LinkedList::deletePosition(int pos)
 
 int LinkedList::get(int pos)
 {
-    int len = 0;
-    Node* tail = head->getLink();
-    while(tail != NULL)
-    {
-        len++;
-    }
-
-
     int outofrange = std::numeric_limits < int >::max();
 
-    if(pos < 1 || pos > len)
+    if(pos < 1)
     {
         return outofrange;
     }
@@ -233,13 +225,15 @@ int LinkedList::get(int pos)
         if (count == pos)
             get = ptr;
         ptr = ptr->getLink();
+        // this line changed 
+        return get->getData();
     }
     // change made here to check more than int max
     if (get == nullptr || get->getLink() == nullptr || get->getData() >= INT_MAX)
     {
         return outofrange;
     }
-    return get->getData();
+    return outofrange;
 }
 
 void LinkedList::printList()
