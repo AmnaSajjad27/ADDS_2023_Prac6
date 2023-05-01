@@ -21,7 +21,7 @@ LinkedList::LinkedList(int *array, int len)
         ptr->setLink(temp);
         ptr = temp;
     }
-  //  ptr->setLink(nullptr);
+    ptr->setLink(nullptr);
 }
 
 bool LinkedList::isEmpty()
@@ -162,8 +162,14 @@ void LinkedList::deleteEnd()
 
 bool LinkedList::deletePosition(int pos)
 {
+    int len = 0;
+    Node *tail = head->getLink();
+    while(tail != NULL)
+    {
+        len++;
+    }
 
-    if(pos < 1)
+    if(pos < 1 || pos > len)
     {
         return false;
     }
