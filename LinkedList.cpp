@@ -56,6 +56,11 @@ void LinkedList::insertEnd(int newNum)
 
 void LinkedList::insertPosition(int pos, int newNum)
 {
+    // made change here so user cant input more than int max
+    if (newNum >= INT_MAX)
+    {
+        return;
+    }
     
     if (this->isEmpty())
     {
