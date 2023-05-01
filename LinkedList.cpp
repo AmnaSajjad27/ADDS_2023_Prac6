@@ -245,7 +245,7 @@ void LinkedList::printList()
     }
 
     Node *ptr = head;
-        std::cout << "[" <<std::endl;
+        std::cout << "[";
     while (ptr != nullptr)
     {
         std::cout << ptr->getData() << " ";
