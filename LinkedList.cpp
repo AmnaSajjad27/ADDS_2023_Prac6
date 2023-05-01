@@ -1,5 +1,6 @@
 #include <limits>
 #include <iostream>
+#include <climits>
 
 #include "LinkedList.h"
 #include "Node.h"
@@ -209,7 +210,8 @@ int LinkedList::get(int pos)
             get = ptr;
         ptr = ptr->getLink();
     }
-    if (get == nullptr || get->getLink() == nullptr || get >= 2147483647)
+    // change made here to check more than int max
+    if (get == nullptr || get->getLink() == nullptr || get->getData() >= INT_MAX)
     {
         return outofrange;
     }
