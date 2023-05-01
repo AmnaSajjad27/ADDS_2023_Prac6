@@ -209,7 +209,7 @@ int LinkedList::get(int pos)
             get = ptr;
         ptr = ptr->getLink();
     }
-    if (get == nullptr || get->getLink() == nullptr)
+    if (get == nullptr || get->getLink() == nullptr || get >= 2147483647)
     {
         return outofrange;
     }
