@@ -225,14 +225,13 @@ int LinkedList::get(int pos)
         if (count == pos)
             get = ptr;
         ptr = ptr->getLink();
-        // this line changed 
-        return get->getData();
     }
     // change made here to check more than int max
     if (get == nullptr || get->getLink() == nullptr || get->getData() >= INT_MAX)
     {
         return outofrange;
     }
+    //return get->getData();
     return outofrange;
 }
 
